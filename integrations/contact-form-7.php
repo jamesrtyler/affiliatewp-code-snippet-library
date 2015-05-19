@@ -21,13 +21,13 @@
  */
 function affwp_cf7_get_success_page_id() {
 	// enter the page ID of the success/thanks page in WordPress
-	$page_id = 6643;
+	$page_id = 254;
 
 	return $page_id;
 }
 
 /**
- * Set the amount page ID of the success page
+ * Set the amount of the form
  * 
  * @since 1.0
  */
@@ -35,8 +35,8 @@ function affwp_cf7_get_form_amount( $id = 0 ) {
 	
 	$id = isset( $id ) ? $id : '';
 
-	// enter
-	if ( 6642 == $id ) {
+	// enter the contact form 7 ID
+	if ( 252 == $id ) {
 		// enter the total amount the referral should be calculated off for this form ID
 		$amount = 100;
 	}
@@ -67,16 +67,12 @@ function affwp_cf7_conversion_script() {
 	}
 
 	// get the amount
-	$amount      = isset( $_GET['amount'] ) ? $_GET['amount'] : '';
-
-	// get the description
-	$description = isset( $_GET['description'] ) ? $_GET['description'] : '';
+	$amount  = isset( $_GET['amount'] ) ? $_GET['amount'] : '';
 
 	// referral arguments
 	$args = array(
-		'status'      => 'unpaid',
-		'amount'      => $amount,
-		'description' => $description
+		'status' => 'unpaid',
+		'amount' => $amount,
 	);
 
 	// add the conversion script to the page
@@ -97,25 +93,25 @@ function affwp_cf7_success_page_redirect( $contact_form ) {
 	// Success page ID
 	$success_page = affwp_cf7_get_success_page_id();
 
+	$submission = WPCF7_Submission::get_instance();
+
+	// get the value of the name field
+	$name = $submission->get_posted_data( 'your-name' );
+
+	// set the reference to be the first name
+	$reference = isset( $name ) ? rawurlencode( $name ) : '';
+
+	// redirect to success page
 	if ( $success_page ) {
-		// redirect
-		wp_redirect( 
-			add_query_arg( 
-				array(  
-					'description' => $description,
-					'amount'      => affwp_cf7_get_form_amount( $contact_form->id() )
-				), 
-				get_permalink( $success_page )
-			) 
+
+		$wpcf7 = WPCF7_ContactForm::get_current();
+
+		$wpcf7->set_properties(
+			array(
+		 		'additional_settings' => "on_sent_ok: \"location.replace(' " . add_query_arg( array( 'description' => $description, 'reference' => $reference, 'amount' => affwp_cf7_get_form_amount( $contact_form->id() ) ), get_permalink( $success_page ) ) . " ');\"",
+			)
 		);
-	    exit;
+
 	}
 }
 add_action( 'wpcf7_before_send_mail', 'affwp_cf7_success_page_redirect' );
-
-/**
- * Disable Contact Form 7's JavaScript
- *
- * @since 1.0
- */
-add_filter( 'wpcf7_load_js', '__return_false' );
