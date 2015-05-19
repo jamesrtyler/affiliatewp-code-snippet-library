@@ -87,9 +87,6 @@ add_action( 'wp_head', 'affwp_cf7_conversion_script' );
  */
 function affwp_cf7_success_page_redirect( $contact_form ) {
 
-	// get the description
-	$description = rawurlencode( $contact_form->title() );
-
 	// Success page ID
 	$success_page = affwp_cf7_get_success_page_id();
 
@@ -97,6 +94,12 @@ function affwp_cf7_success_page_redirect( $contact_form ) {
 
 	// get the value of the name field
 	$name = $submission->get_posted_data( 'your-name' );
+
+	// get the description
+	$description = rawurlencode( $contact_form->title() );
+
+	// add customer's email address to the description
+	$description .= ' - ' . $submission->get_posted_data( 'your-email' );
 
 	// set the reference to be the first name
 	$reference = isset( $name ) ? rawurlencode( $name ) : '';
