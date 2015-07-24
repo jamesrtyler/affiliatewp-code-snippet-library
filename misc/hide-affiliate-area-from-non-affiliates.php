@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: AffiliateWP - Hide Menu Item For Non Affiliates
+ * Plugin Name: AffiliateWP - Hide Affiliate Area From Non Affiliates
  * Plugin URI: http://affiliatewp.com
- * Description: Hides the Affiliate Area page from appearing in the menu unless the user is an affiliate
+ * Description: Hides the Affiliate Area from appearing in the site navigation unless the user is an affiliate
  * Author: Andrew Munro, Sumobi
  * Author URI: http://sumobi.com
  * Version: 1.0
  */
 
-function affwp_custom_hide_menu_item_for_non_affiliates( $items, $menu, $args ) {
+function affwp_custom_hide_affiliate_area_from_non_affiliates( $items, $menu, $args ) {
 
     // grab the page ID of the affiliate area
     // Alternatively you can just set a page ID here
@@ -24,4 +24,4 @@ function affwp_custom_hide_menu_item_for_non_affiliates( $items, $menu, $args ) 
 
     return $items;
 }
-add_filter( 'wp_get_nav_menu_items', 'affwp_custom_hide_menu_item_for_non_affiliates', 10, 3 );
+add_filter( 'wp_get_nav_menu_items', 'affwp_custom_hide_affiliate_area_from_non_affiliates', 10, 3 );
