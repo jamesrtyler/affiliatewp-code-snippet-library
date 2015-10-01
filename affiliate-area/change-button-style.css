@@ -1,0 +1,13 @@
+/**
+ * Description: Change the button color and/or the button hover color by copying/pasting the following CSS into a child theme or the Simple Custom CSS plugin
+ * Author: Michael Beil
+ * Author URI: http://affiliatewp.com
+ */
+
+.affwp-form .button {
+    background-color: #118C4E;
+}
+
+.affwp-form .button:hover {
+    background-color: #FF9009 !important;
+}
