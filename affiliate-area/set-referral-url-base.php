@@ -12,6 +12,7 @@ function affwp_custom_set_referral_url_base( $base_url ) {
 	
 	// Change the URL below
 	// You can also use use a full URL, for example: return http://mysite.com/my-product/
+	// You can only use the URL of your site, where AffiliateWP is installed
 	return site_url( '/my-product/' );
 
 }
