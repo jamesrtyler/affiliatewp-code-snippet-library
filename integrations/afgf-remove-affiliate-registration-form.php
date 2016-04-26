@@ -2,7 +2,7 @@
 /**
  * Plugin Name: AffiliateWP - AFGF - Remove Affiliate Registration Form
  * Plugin URI: http://affiliatewp.com/
- * Description: Removes the affiliate registration form from the [affiliate_area] shortcode, when using Affiliate Forms For Gravity Forms
+ * Description: Removes the affiliate registration from the [affiliate_area] shortcode, when using Affiliate Forms For Gravity Forms
  * Author: Andrew Munro, Sumobi
  * Author URI: http://sumobi.com
  * Version: 1.0
