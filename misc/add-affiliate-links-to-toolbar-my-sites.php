@@ -19,7 +19,7 @@ function affwp_affiliate_toolbar_links( $wp_admin_bar ) {
 
 		// Add 'Affiliates' link.
 		$wp_admin_bar->add_menu( array(
-			'parent' => "blog-{$blog->userblog_id}",
+			'parent' => "blog-{$blog_id}",
 			'id'     => "affiliates-blog-{$blog_id}",
 			'title'  => __( 'Affiliates', 'affiliate-wp' ),
 			'href'   => add_query_arg( 'page', 'affiliate-wp', get_admin_url( $blog_id, 'admin.php' ) )
