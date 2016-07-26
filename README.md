@@ -26,6 +26,6 @@ If there is a snippet you are unable to find and would like to propose get writt
 
 ## Notes
 
-This is not a tutorial archive. Please see the [tutorials section](http://docs.affiliatewp.com/category/10-tutorials) of the AffiliateWP Docs if you're looking for instructions on how to implement these snippets (and others).
+This is not a tutorial archive. Please see the [tutorials section](http://docs.affiliatewp.com/collection/766-code-snippets) of the AffiliateWP Docs if you're looking for instructions on how to implement these snippets (and others).
 
 These snippets come with no guarantees. Due to the constant evolution of the AffiliateWP codebase, it is possible that the behavior of these snippets may change overtime. Find something broken? [Let us know](https://github.com/affiliatewp/library/issues)!
