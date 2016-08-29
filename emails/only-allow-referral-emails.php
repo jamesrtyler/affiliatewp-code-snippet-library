@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: AffiliateWP - Allow Referral Emails
+ * Plugin Name: AffiliateWP - Only Allow Referral Emails
  * Plugin URI: http://affiliatewp.com
  * Description: Disables approval, rejection, and registration emails
  * Author: Michael Beil

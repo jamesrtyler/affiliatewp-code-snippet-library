@@ -2,7 +2,7 @@
 /**
  * Plugin Name: AffiliateWP - Affiliate Referral Rate Email Tag
  * Plugin URI: https://affiliatewp.com
- * Description: Adds an {affiliate_referral_rate} email tag that displays the afffiliate their commission rate
+ * Description: Adds an {affiliate_referral_rate} email tag that displays the affiliate their commission rate
  * Author: Andrew Munro
  * Author URI: https://affiliatewp.com
  * Version: 1.0
