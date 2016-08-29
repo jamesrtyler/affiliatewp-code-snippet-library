@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: AffiliateWP - Easy Digital Downloads - Block Discounts if Referred
+ * Plugin Name: AffiliateWP - Easy Digital Downloads - Block Specific Discounts if Referred
  * Plugin URI: https://affiliatewp.com
  * Description: Blocks specific discount codes at checkout if the customer was referred by an affiliate link
  * Author: Andrew Munro, Sumobi
@@ -22,7 +22,7 @@ function affwp_edd_blocked_discount_ids() {
 }
 
 /**
- * Block discount codes from being used if a customer was referred by an affiliate link
+ * Block specific discount codes from being used if a customer was referred by an affiliate link
  */
 function affwp_edd_block_discount_at_checkout( $return, $discount_id, $code, $user ) {
 
